@@ -66,7 +66,7 @@ public:
         nRPCPort =  21699;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 16);
 
-        const char* pszTimestamp = "StarCashX 2018 is borned";
+        const char* pszTimestamp = "StarCashX 2018 has started it's life";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -84,9 +84,10 @@ public:
 
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0xd0165c1206e6f256ce7a0a795dbbeadcb4a8758dcd2844fd23b25ad3a73576d3"));
-        assert(genesis.hashMerkleRoot == uint256("0xffc108a526fa9af415acb296997c3ebf1f1172cbe423e63ae744d683e90ec4d8"));
-
+        
+		        assert(hashGenesisBlock == uint256("0xb35950be64ef6f42101facb662af50c54a0529f29a9f4d27173575a969c1069d"));
+        assert(genesis.hashMerkleRoot == uint256("0x505c92fe40dc792dab3117d7fc26501e4120daa87d1f6e2a81eff0e9de275a85"));
+		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,85);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,253);
@@ -94,8 +95,8 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-        vSeeds.push_back(CDNSSeedData("seed1","206.81.8.120"));
-	vSeeds.push_back(CDNSSeedData("seed2","77.55.193.205"));
+        vSeeds.push_back(CDNSSeedData("0","206.81.8.120"));
+	vSeeds.push_back(CDNSSeedData("1","77.55.236.166"));
 
 
         convertSeeds(vFixedSeeds, pnSeed, ARRAYLEN(pnSeed), nDefaultPort);
@@ -145,7 +146,7 @@ public:
         genesis.nBits  = 520159231; 
         genesis.nNonce = 72007;
 		
-        assert(hashGenesisBlock == uint256("0xd0165c1206e6f256ce7a0a795dbbeadcb4a8758dcd2844fd23b25ad3a73576d3"));
+        assert(hashGenesisBlock == uint256("0xb35950be64ef6f42101facb662af50c54a0529f29a9f4d27173575a969c1069d"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
